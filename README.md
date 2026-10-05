@@ -5,6 +5,14 @@ This is a very toy example, and in very early stages
 The idea is that this functions as an analogue of a CFD + ML workflow except we have a 2D heat-conduction solver which generates data,
 and a PyTorch CNN which learns to predict the final temperature field from the source layout.
 
+# The Model
+
+The model is a U-Net CNN. The cost function is the mean squared error between the predicted and simulated temperatures.
+There are two fixed coordinate channels to encode each cell's position, allowing the model to learn how each cell's distance to 
+the wall affects its final temperature.
+
+
+
 ## workflow
 
 ```bash
